@@ -1,6 +1,9 @@
 bases:
 - ../../base
 
+patchesStrategicMerge:
+ - replicas.yaml
+
 configMapGenerator:
 - name: mykustom-map
   env: config.properties
