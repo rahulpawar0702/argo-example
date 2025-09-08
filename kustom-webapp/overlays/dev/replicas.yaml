@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: kustomwebapp
 spec:
-  replicas: 3
+  replicas: 3  
   selector:
     matchLabels:
       app: kustomwebapp
@@ -17,3 +17,10 @@ spec:
           image: nginx
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
