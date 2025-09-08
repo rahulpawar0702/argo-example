@@ -1,6 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mywebapp
+  name: kustomwebapp
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      app: kustomwebapp
+  template:
+    metadata:
+      labels:
+        app: kustomwebapp
+    spec:
+      containers:
+        - name: kustomwebapp
+          image: nginx
+          ports:
+            - containerPort: 80
