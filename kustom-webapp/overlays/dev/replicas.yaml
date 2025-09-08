@@ -3,24 +3,4 @@ kind: Deployment
 metadata:
   name: kustomwebapp
 spec:
-  replicas: 3  
-  selector:
-    matchLabels:
-      app: kustomwebapp
-  template:
-    metadata:
-      labels:
-        app: kustomwebapp
-    spec:
-      containers:
-        - name: kustomwebapp
-          image: nginx
-          ports:
-            - containerPort: 80
-          resources:
-            requests:
-              cpu: "100m"
-              memory: "128Mi"
-            limits:
-              cpu: "250m"
-              memory: "256Mi"
+  replicas: 3
